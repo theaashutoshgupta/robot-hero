@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(0 0% 0%);
+  --color-primary: hsl(0 0% 0%);
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-primary-foreground);
+  font-family: var(--font-space);
+  overflow: auto !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ─── Accessibility: Focus-visible styles for all interactive elements ─── */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+/* ─── Accessibility: Reduced motion support ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
