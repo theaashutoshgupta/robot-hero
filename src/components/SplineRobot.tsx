@@ -20,13 +20,12 @@ export default function SplineRobot({ className = "", onLoaded }: SplineRobotPro
     const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
     useEffect(() => {
-        const isMobile = window.innerWidth < 768;
-        const isLowEnd = navigator.hardwareConcurrency <= 2;
+        const isVeryLowEnd = navigator.hardwareConcurrency <= 1;
         const canvas = document.createElement("canvas");
         const gl = canvas.getContext("webgl2") || canvas.getContext("webgl");
         const noWebGL = !gl;
 
-        if (!isMobile && !isLowEnd && !noWebGL) {
+        if (!noWebGL && !isVeryLowEnd) {
             setCanLoad(true);
             import("@splinetool/react-spline").then((mod) => {
                 setSplineComponent(() => mod.default);
