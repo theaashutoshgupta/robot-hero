@@ -26,7 +26,8 @@ export default function Navbar() {
                         width={240}
                         height={48}
                         className="h-full w-auto object-contain brightness-0 invert"
-                        priority
+                        loading="eager"
+                        fetchPriority="high"
                     />
                 </motion.a>
 

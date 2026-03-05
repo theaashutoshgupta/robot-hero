@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "BOTLABS — Future Robotics, Redefined",
   description:
     "Discover the next generation of consumer robotics. Premium cyberpunk robots engineered for the future.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -41,12 +44,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        {/* Preload critical hero image */}
-        <link
-          rel="preload"
-          as="image"
-          href="/logo.png"
-        />
       </head>
       <body className="bg-background text-primary-foreground font-space antialiased">
         {children}
